@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of Sons </title>
+</head>
+<body>
+    <h1> Nos différents titres </h1>
+    <p>
+        <ul>
+        {% for liste in listes %}
+
+            <li>{{liste.title | upper}}</li>
+
+        {% endfor %}
+        </ul>
+    </p>
+
+</body>
+</html>
