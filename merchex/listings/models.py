@@ -8,6 +8,8 @@ class Band(models.Model):
         HIP_HOP = 'HH'
         SYNTH_POP = 'SP'
         ALTERNATIVE_ROCK = 'AR'
+    def __str__(self):
+        return f'{self.name}'
 
 
     name = models.fields.CharField(max_length=100)
@@ -24,8 +26,11 @@ class Listing(models.Model):
         Clothing = 'Cloth'
         Posters = 'Post'
         Miscellaneous = 'Misc'
+    def __str__(self):
+        return f'{self.title}'
     title = models.fields.CharField(max_length=100)
     description = models.fields.CharField(max_length=1000)
     sold = models.fields.BooleanField(default=False)
-    year = models.fields.IntegerField(max_length=5)
+    year = models.fields.IntegerField(validators=[MinValueValidator(1900),MaxValueValidator(2022)])
     type = models.fields.CharField(choices=Type.choices,max_length=10)
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
