@@ -9,6 +9,9 @@
 <body>
     <nav>
         <a href="{% url 'band-list' %}">Groupes</a>
+        <a href="{% url 'listing-list' %}">Listes</a>
+        <a href="{% url 'contact' %}">Contacts</a>
+        <a href="{% url 'about' %}">Autres</a>
     </nav>
 
     {% block content %}{% endblock %}
