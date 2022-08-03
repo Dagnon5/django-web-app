@@ -8,9 +8,9 @@
  <li>Année : {{ listes_det.year }}</li>
     <li>Solde : {{ listes_det.sold }} </li>
     <li>Type : {{ listes_det.get_type_display }}</li>
-    <li> Band : {{ band.name }} </li>
+    <li> Band : {{ listes_det.band }} </li>
 </ul>
 
-<a href="{% url 'listing-list' %} ">Retour à tous les groupes </a>
+<a href="{% url 'listing-list' %} ">Retour à toutes les listes </a>
  {% endblock %}
 
