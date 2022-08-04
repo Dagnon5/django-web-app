@@ -11,6 +11,7 @@
     <li> Band : {{ listes_det.band }} </li>
 </ul>
 <a href="{% url 'listing-change' listes_det.id %}">Modifier cette annonce</a>
+<a href="{% url 'listing-delete' listes_det.id %}">Supprimer cette annonce </a>
 <a href="{% url 'listing-list' %} ">Retour à toutes les listes </a>
  {% endblock %}
 

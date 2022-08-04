@@ -11,6 +11,7 @@
 
             <li><a href="{% url 'band-detail' band.id %}"> {{band.name | upper}}</a>
             <a href="{% url 'band-change' band.id %}">[Modifier]</a>
+                <a href="{% url 'band-delete' band.id %}">[Supprimer]</a>
             </li>
 
 

@@ -1,0 +1,9 @@
+{% extends 'listings/base.html' %}
+ {% block content %}
+<h1>Supprimer une annonce    </h1>
+<p> Êtes-vous sûre de supprimer cette annonce  {{ liste.title }} ?  </p>
+<form action="", method="post">
+ {% csrf_token %}
+ <input type="submit", value="Supprimer">
+</form>
+ {% endblock %}

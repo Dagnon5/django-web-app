@@ -49,6 +49,17 @@ def band_change(request, id):
     return render(request, 'listings/band_change.html',
                   {'form':form})
 
+def band_delete(request, id):
+    band = Band.objects.get(id=id)
+    if request.method == 'POST':
+        # Supprimer le modèle
+        band.delete()
+        # Rédiriger vers la band-list
+        return redirect('band-list')
+    # pas besoin de « else » ici. Si c'est une demande GET, continuez simplement
+    return render(request, 'listings/band_delete.html',
+                  {'band':band})
+
 
 def listings(request):
     listes = Listing.objects.all()
@@ -85,6 +96,17 @@ def listing_change(request, id):
         form = ListingForm(instance=liste)
     return render(request, 'listes_title/listing_change.html',
                   {'form':form})
+
+def listing_delete(request,id):
+    liste = Listing.objects.get(id=id)
+    if request.method == 'POST':
+        #Supprimer la l'annonce
+        liste.delete()
+        # Rédiriger vers la liste d'annonces
+        return redirect('listing-list')
+    # pas besoin de « else » ici. Si c'est une demande GET, continuez simplement
+    return render(request, 'listes_title/listing_delete.html',
+                  {'liste':liste})
 
 
 
